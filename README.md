@@ -18,18 +18,21 @@ entre el tamaño total de la muestra.
 ● Ri: Frecuencia relativa acumulada, la suma acumulada de las frecuencias relativas. 
 ● pi: Probabilidad, que se obtiene dividiendo la frecuencia absoluta de cada valor entre
 el tamaño total de la muestra. 
-● Pi: Probabilidad acumulada, la suma acumulada de las probabilidades. Se debe devolver un dataframe que contenga estas columnas como claves y las listas
+● Pi: Probabilidad acumulada, la suma acumulada de las probabilidades. 
+
+Se debe devolver un dataframe que contenga estas columnas como claves y las listas
 correspondientes como valores asociados. 
 
 ## Criterios de evaluación:
-Función analisis_estadistico: La función debe tener el nombre exacto “analisis_estadistico” y aceptar una lista de valores numéricos como parámetro. Diccionario de salida: La función debe devolver un diccionario con las siguientes claves y
-sus correspondientes valores:
+Función analisis_estadistico: La función debe tener el nombre exacto “analisis_estadistico” y aceptar una lista de valores numéricos como parámetro. Diccionario de salida: La función debe devolver un diccionario con las siguientes claves y sus correspondientes valores:
 * fi: Lista de frecuencias absolutas.
 * Fi: Lista de frecuencias acumuladas.
 * ri: Lista de frecuencias relativas.
 * Ri: Lista de frecuencias relativas acumuladas.
 * pi: Lista de probabilidades.
-* Pi: Lista de probabilidades acumuladas. Manejo de casos especiales: La función debe manejar adecuadamente casos donde la lista de
+* Pi: Lista de probabilidades acumuladas. 
+
+Manejo de casos especiales: La función debe manejar adecuadamente casos donde la lista de
 valores esté vacía, no contenga elementos no numéricos o no sea una lista en concreto.
 
 

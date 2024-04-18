@@ -24,12 +24,12 @@ correspondientes como valores asociados.
 ## Criterios de evaluación:
 Función analisis_estadistico: La función debe tener el nombre exacto “analisis_estadistico” y aceptar una lista de valores numéricos como parámetro. Diccionario de salida: La función debe devolver un diccionario con las siguientes claves y
 sus correspondientes valores:
-'fi': Lista de frecuencias absolutas.
-'Fi': Lista de frecuencias acumuladas.
-'ri': Lista de frecuencias relativas.
-'Ri': Lista de frecuencias relativas acumuladas.
-'pi': Lista de probabilidades.
-'Pi': Lista de probabilidades acumuladas. Manejo de casos especiales: La función debe manejar adecuadamente casos donde la lista de
+* fi: Lista de frecuencias absolutas.
+* Fi: Lista de frecuencias acumuladas.
+* ri: Lista de frecuencias relativas.
+* Ri: Lista de frecuencias relativas acumuladas.
+* pi: Lista de probabilidades.
+* Pi: Lista de probabilidades acumuladas. Manejo de casos especiales: La función debe manejar adecuadamente casos donde la lista de
 valores esté vacía, no contenga elementos no numéricos o no sea una lista en concreto.
 
 

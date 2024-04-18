@@ -1,17 +1,38 @@
 import pandas as pd
+import csv
 
-lista_edades = [18, 19, 21, 22, 21, 19, 30, 44, 35, 23, 27, 28, 26, 26, 19, 19, 19, 20, 20, 27, 25, 25, 18, 18, 37, 40, 20, 20, 19, 29]
+lista_edades = [] 
 
+#Obtiene los datos de las edades del archivo "edades-30Alumnos.csv"
+with open('edades-30Alumnos.csv', newline='') as archivo_csv:
+    lector_csv = csv.reader(archivo_csv, delimiter=',', quotechar='"')
+    for fila in lector_csv:
+        lista_edades.append(fila[1])
+
+#Conversión de lista a dataframe y creación de la columna 'Edades'
 df = pd.DataFrame(lista_edades, columns=['Edades'])
 
 def analisis_estadistico(df):
-    df = df['Edades'].value_counts().reset_index().sort_values('index').reset_index(drop=True)
-    df.columns = ['Edades', 'fi']
+    #verifica si df es una lista
+    if not isinstance(df, pd.DataFrame):
+        print("Error: El argumento no es un DataFrame.")
+        return None
+    #Calcula la frecuencia absoluta fi
+    df['fi'] = df.groupby('Edades')['Edades'].transform('count')
+    #Elimina las edades duplicadas de la columna "Edades"
+    df = df.drop_duplicates()
+    #calcula la frecuencia acumulada Fi
     df["Fi"] = df['fi'].cumsum()
+    #calcula la frecuencia relativa ri
     df["ri"] = df["fi"] / df["fi"].sum()
+    #calcula la frecuencia relativa acumulada Ri
     df["Ri"] = df['ri'].cumsum()
+    #calcula la frecuencia porcentual simple pi%
     df['pi%'] = df['ri'] * 100
+    #calcula la frecuencia porcentual acumulada Pi%
     df['Pi%'] = df['Ri'] * 100
-    print(df.head(30))
+    
+    return df
 
-analisis_estadistico(lista_edades)
+df_resultado = analisis_estadistico(df)
+print(df_resultado.head(30))

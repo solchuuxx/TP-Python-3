@@ -1,13 +1,6 @@
 import pandas as pd
-import csv
 
-lista_edades = [] 
-
-#Obtiene los datos de las edades del archivo "edades-30Alumnos.csv"
-with open('edades-30Alumnos.csv', newline='') as archivo_csv:
-    lector_csv = csv.reader(archivo_csv, delimiter=',', quotechar='"')
-    for fila in lector_csv:
-        lista_edades.append(fila[1])
+lista_edades = [19, 19, 18, 27, 24, 28, 30, 40, 44, 38, 37, 25, 25, 31, 32, 24, 29, 29, 29, 19, 19, 18, 20, 21, 21, 19, 19, 19, 18, 23] 
 
 #Conversión de lista a dataframe y creación de la columna 'Edades'
 df = pd.DataFrame(lista_edades, columns=['Edades'])
